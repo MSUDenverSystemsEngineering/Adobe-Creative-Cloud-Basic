@@ -195,7 +195,7 @@ Try {
 		}
 
 		# <Perform Uninstallation tasks here>
-		$exitCode = Execute-MSI -Action 'Uninstall' -Path '{2DB863F4-7C31-45AE-964F-837F26626494}' -PassThru
+		$exitCode = Remove-MSIApplications -Name "Adobe Creative Cloud" -PassThru
 		If (($exitCode.ExitCode -ne "0") -and ($mainExitCode -ne "3010")) { $mainExitCode = $exitCode.ExitCode }
 
 
